@@ -20,16 +20,6 @@ public class Ticket {
         this.train = train;
     }
 
-    // Secondary constructor (auto-generates ticketID)
-    public Ticket(String userID, String source, String destination, Date dateOfJourney, Train train, String ticketID) {
-        this.ticketID = ticketID;
-        this.userID = userID;
-        this.source = source;
-        this.destination = destination;
-        this.dateOfJourney = dateOfJourney;
-        this.train = train;
-    }
-
     // Getters
     public String getTicketID() {
         return ticketID;
@@ -92,4 +82,24 @@ public class Ticket {
                 ", train=" + (train != null ? train.getTrainNumber() : "N/A") +
                 '}';
     }
+
+    public String getTicketInfo() {
+        return String.format(
+                "Ticket Details:\n" +
+                        "------------------------\n" +
+                        "Ticket ID     : %s\n" +
+                        "User ID       : %s\n" +
+                        "Source        : %s\n" +
+                        "Destination   : %s\n" +
+                        "Date of Journey: %s\n" +
+                        "Train         : %s\n",
+                this.ticketID,
+                this.userID,
+                this.source,
+                this.destination,
+                this.dateOfJourney != null ? this.dateOfJourney.toString() : "N/A",
+                this.train != null ? this.train.toString() : "N/A"
+        );
+    }
+
 }

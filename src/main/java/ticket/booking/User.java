@@ -60,8 +60,8 @@ public class User {
     }
 
     public void PrintTicketsBooked(){
-        for(Ticket ticket:ticketsBooked){
-            System.out.println(ticket);
+        for(int i=0;i<ticketsBooked.size();i++){
+            System.out.println(ticketsBooked.get(i).toString());
         }
     }
 
