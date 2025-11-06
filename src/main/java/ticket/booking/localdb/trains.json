@@ -1,0 +1,34 @@
+[
+  {
+    "trainID": "TRN001",
+    "trainNumber": "12001",
+    "departure": "2025-11-10T09:00:00Z",
+    "arrival": "2025-11-10T18:30:00Z",
+    "seats": [
+      [1, 2, 3, 4],
+      [5, 6, 7, 8]
+    ],
+    "stationTimes": {
+      "Delhi": "09:00:00",
+      "Agra": "12:00:00",
+      "Jaipur": "18:30:00"
+    },
+    "stations": ["Delhi", "Agra", "Jaipur"]
+  },
+  {
+    "trainID": "TRN002",
+    "trainNumber": "22101",
+    "departure": "2025-11-12T07:30:00Z",
+    "arrival": "2025-11-12T10:15:00Z",
+    "seats": [
+      [1, 2, 3, 4],
+      [5, 6, 7, 8]
+    ],
+    "stationTimes": {
+      "Mumbai": "07:30:00",
+      "Lonavala": "09:00:00",
+      "Pune": "10:15:00"
+    },
+    "stations": ["Mumbai", "Lonavala", "Pune"]
+  }
+]

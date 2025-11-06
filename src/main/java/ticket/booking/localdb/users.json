@@ -1,0 +1,31 @@
+{
+  "name": "Krishnendu De",
+  "password": "myPassword123",
+  "hashedPassword": "5f4dcc3b5aa765d61d8327deb882cf99",
+  "ticketsBooked": [
+    {
+      "ticketID": "TCKT001",
+      "userID": "USR001",
+      "source": "Delhi",
+      "destination": "Jaipur",
+      "dateOfJourney": "2025-11-10T09:00:00Z",
+      "train": {
+        "trainID": "TRN001",
+        "trainNumber": "12001",
+        "departure": "2025-11-10T09:00:00Z",
+        "arrival": "2025-11-10T18:30:00Z",
+        "seats": [
+          [0, 0, 0, 0],
+          [0, 0, 0, 0]
+        ],
+        "stationTimes": {
+          "Delhi": "09:00:00",
+          "Agra": "12:00:00",
+          "Jaipur": "18:30:00"
+        },
+        "stations": ["Delhi", "Agra", "Jaipur"]
+      }
+    }
+  ],
+  "userID": "USR001"
+}
