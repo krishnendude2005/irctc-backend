@@ -102,6 +102,11 @@ public class UserBooking {
         TrainService ts = new TrainService();
         return ts.searchTrains(source, destination);
     }
+    public void getAvailableSeats(Train train) throws IOException {
+        TrainService ts = new TrainService(train);
+        int ans = ts.getSeatsAavailable(train);
+        System.out.println("Available Seats: " + ans);
+    }
 
 }
 
