@@ -31,8 +31,8 @@ public class TrainService {
     }
     public boolean validateTrain(Train train, String source, String destination) {
       List<String> stationOrder = train.getStations();
-      int sourceIndex = stationOrder.indexOf(source);
-      int destinationIndex = stationOrder.indexOf(destination);
+      int sourceIndex = stationOrder.indexOf(source.toLowerCase());
+      int destinationIndex = stationOrder.indexOf(destination.toLowerCase());
 
       return sourceIndex != -1 && destinationIndex != -1 && sourceIndex < destinationIndex;
     }
