@@ -43,12 +43,6 @@ public class UserBooking {
 
     }
 
-    public List<Train> loadTrains() throws IOException {
-        File trains = new File(LOCALDB_PATH + "/trains.json");
-        return objectMapper.readValue(trains, new TypeReference<List<Train>>() {
-        });
-    }
-
     // Features a user can use
 
     public Boolean loginUser() {
@@ -105,13 +99,8 @@ public class UserBooking {
     }
 
     public List<Train> searchTrains(String source, String destination) throws IOException {
-        List<Train> trains = new ArrayList<>();
-        for (Train train : loadTrains()) {
-            if (train.getStations().contains(source) && train.getStations().contains(destination)) {
-                trains.add(train);
-            }
-        }
-        return trains;
+        TrainService ts = new TrainService();
+        return ts.searchTrains(source, destination);
     }
 
 }
