@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserBooking {
-    private User user;
+    private static User user;
     private List<User> userList;
 
-    private static final String LOCALDB_PATH = "../localdb";
+    private static final String LOCALDB_PATH = "localdb";
     private ObjectMapper objectMapper = new ObjectMapper();
 
     // create a constructor for - initializing a logged user and making the user global level so anyone can access the user
@@ -30,8 +30,13 @@ public class UserBooking {
         loadUsers();
     }
 
+    public static User getUser() {
+        return user;
+    }
     public List<User> loadUsers() throws IOException {
         File users = new File(LOCALDB_PATH + "/users.json");
+        System.out.println("------------------Absolute path: " + users.getAbsolutePath()); // debug logic
+
         userList = objectMapper.readValue(users, new TypeReference<List<User>>() {
         });
         return userList;
@@ -70,8 +75,8 @@ public class UserBooking {
     }
 
 
-    public void fetchBooking() {
-        this.user.PrintTicketsBooked();
+    public static void fetchBooking() {
+        user.PrintTicketsBooked();
     }
 
     public boolean cancelBooking(String ticketId) throws IOException {
@@ -102,12 +107,16 @@ public class UserBooking {
         TrainService ts = new TrainService();
         return ts.searchTrains(source, destination);
     }
-    public void getAvailableSeats(Train train) throws IOException {
-        TrainService ts = new TrainService(train);
-        int ans = ts.getSeatsAavailable(train);
+    public void getAvailableSeats(String trainID) throws IOException {
+        TrainService ts = new TrainService();
+        int ans = ts.getSeatsAavailable(trainID);
         System.out.println("Available Seats: " + ans);
     }
 
+    public void bookTicket(String trainIdToBook) throws IOException {
+        TrainService ts = new TrainService();
+        ts.bookTrainTicket(trainIdToBook);
+    }
 }
 
 //NOTE :

@@ -1,7 +1,10 @@
 package ticket.booking;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Ticket {
     private String ticketID;
     private String userID;
@@ -9,7 +12,7 @@ public class Ticket {
     private String destination;
     private Date dateOfJourney;
     private Train train;
-
+public Ticket() {}
     // Parameterized constructor
     public Ticket(String ticketID, String userID, String source, String destination, Date dateOfJourney, Train train) {
         this.ticketID = ticketID;

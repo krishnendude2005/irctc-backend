@@ -1,9 +1,12 @@
 package ticket.booking;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Train {
     private String trainID;
     private String trainNumber;
@@ -12,6 +15,8 @@ public class Train {
     private List<List<Integer>> seats;
     private Map<String, String> stationTimes;
     private List<String> stations;
+
+    public Train() {}
     // Parameterized constructor
     public Train(String trainID, String trainNumber, Date departure, Date arrival,
                  List<List<Integer>> seats, Map<String, String> stationTimes, List<String> stations) {
@@ -81,7 +86,5 @@ public class Train {
     public void setStations(List<String> stations) {
         this.stations = stations;
     }
-    public String getTrainInfo() {
-        return String.format("Train ID: %s \n Train Number: %s", this.trainID, this.trainNumber);
-    }
+
 }
